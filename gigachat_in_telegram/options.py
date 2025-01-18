@@ -13,7 +13,7 @@ load_dotenv()
 def get_token() -> str:
     url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
 
-    payload = "scope=GIGACHAT_API_PERS"
+    payload = {"scope": "GIGACHAT_API_PERS"}
     headers = {
         "Content-Type": "application/x-www-form-urlencoded",
         "Accept": "application/json",
@@ -44,13 +44,13 @@ def get_models() -> dict:
     return response.json()
 
 
-def generate_text() -> str:
+def generate_text(query: str) -> str:
     url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
 
     payload = json.dumps(
         {
             "model": "GigaChat",
-            "messages": [{"role": "user", "content": "Привет! Как дела?"}],
+            "messages": [{"role": "user", "content": query}],
             "stream": False,
             "repetition_penalty": 1,
         }
