@@ -1,4 +1,4 @@
-# GigaChat для Telegram
+# GigaChat в Telegram
 
 ## Требования
 - Python версии 3.12 или выше.
