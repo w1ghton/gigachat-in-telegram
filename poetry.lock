@@ -374,6 +374,32 @@ files = [
 typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
 
 [[package]]
+name = "pytelegrambotapi"
+version = "4.26.0"
+description = "Python Telegram bot api."
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "pytelegrambotapi-4.26.0-py3-none-any.whl", hash = "sha256:6a7a10571dcecc01aac917269baf4321a0518d5db1fe57b6a09b76cab2bd6b91"},
+    {file = "pytelegrambotapi-4.26.0.tar.gz", hash = "sha256:ba92f6a83bf991cbf189577dbc314976032ad8a3fbe6cd631d0ccd79db8523f9"},
+]
+
+[package.dependencies]
+requests = "*"
+
+[package.extras]
+aiohttp = ["aiohttp"]
+coloredlogs = ["coloredlogs"]
+fastapi = ["fastapi"]
+json = ["ujson"]
+pil = ["pillow"]
+psutil = ["psutil"]
+redis = ["redis (>=3.4.1)"]
+uvicorn = ["uvicorn"]
+watchdog = ["watchdog"]
+
+[[package]]
 name = "python-dotenv"
 version = "1.0.1"
 description = "Read key-value pairs from a .env file and set them as environment variables"
@@ -423,6 +449,22 @@ files = [
 ]
 
 [[package]]
+name = "telebot"
+version = "0.0.5"
+description = "A Telegram bot library, with simple route decorators."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "telebot-0.0.5-py3-none-any.whl", hash = "sha256:50327c240243480d40ade4ea5bea4f464bf57d4ff000ea669fcd705396074863"},
+    {file = "telebot-0.0.5.tar.gz", hash = "sha256:848a5885b57247b65edd0e92647b4372ebd8d41611dca3f344788c11deac2571"},
+]
+
+[package.dependencies]
+pyTelegramBotAPI = "*"
+requests = "*"
+
+[[package]]
 name = "typing-extensions"
 version = "4.12.2"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -455,4 +497,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "0b3c03609227b41436733c23258826771e34cf8a9ecbc23a56edd6f87f88f8c4"
+content-hash = "5c7977c05f5b5a46fec57c9e300bbdc70b8dc2a59d9e554710e9e92b8ce47614"

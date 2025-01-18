@@ -10,7 +10,8 @@ requires-python = ">=3.12,<4.0"
 dependencies = [
     "requests (>=2.32.3,<3.0.0)",
     "python-dotenv (>=1.0.1,<2.0.0)",
-    "gigachat (>=0.1.37.post1,<0.2.0)"
+    "gigachat (>=0.1.37.post1,<0.2.0)",
+    "telebot (>=0.0.5,<0.0.6)"
 ]
 
 
