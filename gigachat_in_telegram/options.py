@@ -18,7 +18,7 @@ def get_token() -> str:
         "Content-Type": "application/x-www-form-urlencoded",
         "Accept": "application/json",
         "RqUID": str(uuid.uuid4()),
-        "Authorization": f"Basic {os.getenv("AUTH_TOKEN")}",
+        "Authorization": f"Basic {os.getenv("GIGACHAT_API_KEY")}",
     }
 
     response = requests.request(

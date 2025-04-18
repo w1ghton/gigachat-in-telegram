@@ -7,7 +7,7 @@ load_dotenv()
 
 def generate_text(query: str) -> str:
     model = GigaChat(
-        credentials=os.getenv("AUTH_TOKEN"),
+        credentials=os.getenv("GIGACHAT_API_KEY"),
         model="GigaChat",
         verify_ssl_certs=False,
     )
