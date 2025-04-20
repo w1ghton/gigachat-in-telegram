@@ -9,5 +9,12 @@ def generate_text(query: str) -> str:
         verify_ssl_certs=False,
     )
 
-    response = model.chat(query)
+    response = model.chat(
+        payload={
+            "messages": [
+                {"role": "user", "content": query},
+            ],
+            "max_tokens": 512,
+        }
+    )
     return response.choices[0].message.content
