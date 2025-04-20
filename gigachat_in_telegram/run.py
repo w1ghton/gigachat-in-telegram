@@ -16,7 +16,7 @@ def send_welcome(message: telebot.types.Message):
 
 @bot.message_handler(func=lambda message: True)
 def gigachat_answer(message: telebot.types.Message):
-    bot.reply_to(message, ai.generate_text(message.text))
+    bot.reply_to(message, ai.generate_text(message.text), parse_mode="MarkdownV2")
 
 
 bot.infinity_polling()
