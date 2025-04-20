@@ -1,18 +1,16 @@
 import telebot
-from dotenv import load_dotenv
-import os
+from env import Settings
+
 from gigachat_in_telegram import ai
 
-load_dotenv()
-
-bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
+bot = telebot.TeleBot(Settings().telegram_bot_token)
 
 
 @bot.message_handler(commands=["help", "start"])
 def send_welcome(message: telebot.types.Message):
     bot.send_message(
         message.chat.id,
-        """я гигачат\nРепозиторий: github.com/w1ghton/gigachat-in-telegram""",
+        """repo: github.com/w1ghton/gigachat-in-telegram""",
     )
 
 

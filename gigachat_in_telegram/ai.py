@@ -1,13 +1,10 @@
+from env import Settings
 from gigachat import GigaChat
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
 
 
 def generate_text(query: str) -> str:
     model = GigaChat(
-        credentials=os.getenv("GIGACHAT_API_KEY"),
+        credentials=Settings().gigachat_api_key,
         model="GigaChat",
         verify_ssl_certs=False,
     )
