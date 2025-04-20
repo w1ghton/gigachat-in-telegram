@@ -1,14 +1,19 @@
+import re
 from env import Settings
 from gigachat import GigaChat
 
 
+def escape_markdown_v2(text: str) -> str:
+    return re.sub(r"([\[\]()>#+\-=|{}.!])", r"\\\1", text)
+
+
 def generate_text(query: str) -> str:
-    FORMAT_TEXT = """При использовании форматирования используй это:
-                    **Жирный текст** – две звездочки с обеих сторон текста.
-                    __Текст курсивом__ – два нижних подчеркивания.
-                    ~~Зачеркнутый текст~~ – две тильды.
-                    `Моноширинный текст` – один знак апострофа.
-                    ```Моноширинный текст 2``` – три знака апострофа, можно выделить несколько строк. Отличается от моно через контекстное меню (на маке без цвета и не копируется на Windows и MacOS при нажатии, поэтому для выделения нескольких строк лучше используйте контекстное меню)"""
+    FORMAT_TEXT = """При необходимости форматирования используй это:
+                    **Жирный текст**
+                    __Текст курсивом__
+                    ~~Зачеркнутый текст~~
+                    `Моноширинный текст`
+                    ```Несколько строк кода```"""
 
     model = GigaChat(
         credentials=Settings().gigachat_api_key,
@@ -25,4 +30,4 @@ def generate_text(query: str) -> str:
             "max_tokens": 512,
         }
     )
-    return response.choices[0].message.content
+    return escape_markdown_v2(response.choices[0].message.content)
