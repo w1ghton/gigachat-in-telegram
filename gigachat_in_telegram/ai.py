@@ -12,7 +12,7 @@ def generate_text(query: str) -> str:
     response = model.chat(
         payload={
             "messages": [
-                {"role": "system", "content": "Не используй форматирование"},
+                {"role": "system", "content": "Отвечай кратко"},
                 {"role": "user", "content": query},
             ],
             "max_tokens": 512,
