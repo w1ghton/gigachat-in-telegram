@@ -50,7 +50,7 @@
 2. **Запуск бота:**
 
    ```bash
-   python -m gigachat_in_telegram
+   python gigachat_in_telegram/run.py
    ```
 
 3. **Проверка работы:**
